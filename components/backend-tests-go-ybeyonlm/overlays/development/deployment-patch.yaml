@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:   
-  annotations:  
+metadata:
+  annotations:
     tad.gitops.set/image: ".spec.template.spec.containers[0].image"
     tad.gitops.get/image: ".spec.template.spec.containers[0].image"
     tad.gitops.set/replicas: ".spec.replicas"
-    tad.gitops.get/replicas: ".spec.replicas" 
+    tad.gitops.get/replicas: ".spec.replicas"
   name: backend-tests-go-ybeyonlm
 spec:
-  replicas: 1 
-  template: 
+  replicas: 1
+  template:
     spec:
       containers:
-      - image: quay.io/redhat-tssc/task-runner:1.7
-        name: container-image  
+        - image: quay.io/rhtap_qe/backend-tests-go-ybeyonlm:c044b573f8c2637273cacb77ce983369d866208b@sha256:90011193b76267dbd1d01e6a8c70b3c5a3af2c0a6b98c373d5a3a553410b428e
+          name: container-image
